@@ -1,0 +1,7 @@
+Package cleanup notes
+- Removed visible demo banner and demo title/labels.
+- Added explicit manifest and Apple touch icon links for PWA discovery.
+- Removed stale reference to a deleted demo-photo object that could throw a runtime error.
+- Advance orders now persist in localStorage and are included in encrypted backup/restore.
+- Service worker cache version incremented.
+- Validation performed: ZIP integrity and JavaScript syntax; not a full runtime/device/security audit.

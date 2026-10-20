@@ -1,0 +1,30 @@
+{
+  "id": "./",
+  "name": "Shree Krishna Jewellers",
+  "short_name": "Krishna Jewellers",
+  "description": "Customer records, jewellery stock, payments, advance orders and Girvi management",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#fbf5e6",
+  "theme_color": "#6d1420",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

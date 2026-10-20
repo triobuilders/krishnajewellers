@@ -1,0 +1,24 @@
+SHREE KRISHNA JEWELLERS — ENCRYPTED BACKUP BUILD
+
+Kya badla hai:
+- Demo ke in-memory storage shim aur sample data seed block ko remove kiya gaya. App ab actual browser storage use karta hai (localStorage + IndexedDB photos).
+- Manual backup ab .skjbackup file mein AES-256-GCM encryption ke saath export hota hai. Key PBKDF2-SHA-256 (310,000 iterations) se strong backup passphrase ke saath derive hoti hai. Salt aur IV har backup ke liye random hain.
+- Restore encrypted backup ko decrypt karta hai, format validate karta hai aur purana plaintext JSON restore karne par warning deta hai.
+- ZIP archive integrity check pass hua; yeh full penetration test ya Android device test nahi hai.
+
+IMPORTANT LIMITATIONS — ise abhi production-secure na samjhein:
+1. Encrypted export/backup file encrypted hai; current live browser storage ke records at-rest encrypted nahi hain. Browser profile/phone access ho to data read ho sakta hai. Device screen lock aur trusted phone zaroori hai.
+2. Encrypted online/cloud backup is build mein implement nahi hai. Yeh build manual encrypted backup ke liye hai.
+3. Browser storage may be cleared by user, app/browser uninstall, device reset, storage eviction, or corruption. Regularly export backup and copy it to a separate USB/pendrive or trusted storage.
+4. Use HTTPS-installed PWA for Web Crypto. Opening as file:// may not provide crypto.subtle.
+5. Backup password is not recoverable. Store it separately in a safe place; do not keep it beside the backup file. If lost, backup cannot be decrypted.
+6. Before real records, test: create dummy customer/product/girvi, close/reopen app, export, move file to another folder/device, restore, and compare all totals/photos.
+7. Never upload customer data or backup files to a public GitHub repository.
+
+To save on phone and move to pendrive:
+1. Open installed PWA from its HTTPS address.
+2. Go to Admin/Backup and tap Download encrypted backup.
+3. Enter a unique strong backup passphrase (12+ characters).
+4. Find the .skjbackup file in Downloads using File Manager.
+5. Copy/share it to USB OTG pendrive or trusted storage. Keep another copy separately.
+6. Restore through the app's Restore encrypted backup option and enter the same passphrase.

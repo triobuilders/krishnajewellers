@@ -1,0 +1,4 @@
+GST AND ADVANCE ORDER NOTES
+- GST and making-charge calculation controls are included in the app UI; confirm the correct tax treatment and rates for your business before relying on totals.
+- Advance orders are saved locally and are included in encrypted backup exports.
+- Advance order records do not reduce stock until the purchase is recorded as a sale.
